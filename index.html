@@ -36,14 +36,19 @@
                     </aside>
             </div>
             <div class="col-9">
-                <div class="note-container">
-                    <input type="text" id="note-title" placeholder="Título">
-                    <div id="note-description" contenteditable></div>
-                    <div class="buttons text-end">
-                        <button class="btn-primary bg-danger" id="showModal">Excluir</button>
-                        <button class="btn-primary bg-dark" id="add-note-btn">Salvar Alterações</button>
+                <form id="note-form">
+                    <div>
+                        <label for="note-title">Título</label>
+                        <input type="text" id="note-title" required>
                     </div>
-                </div>
+                    <div>
+                        <label for="note-content">Conteúdo</label>
+                        <textarea id="note-content" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Salvar</button>
+                </form>
+
+                <div id="message"></div>
             </div>
         </div>
     </main>

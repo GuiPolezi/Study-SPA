@@ -31,9 +31,44 @@ async function  addNote(title, content, userId) {
             userId: userId
         });
         console.log("Nota adicionada com ID: ", docRef.id);
+        return true;
     } catch (e) {
         console.error("erro ao adicionar nota", e);
+        return false;
     }
 }
-
 // uso exemplo: addNote("minha primeira nota", "conteudo");
+
+// Obtendo referencias ao elemento do html
+
+const noteForm = document.getElementById('note-form');
+const noteTitleInput = document.getElementById('note-title');
+const noteContentInput = document.getElementById('note-content');
+const messagediv = document.getElementById('message');
+
+// Ouvinte de evento para envio do form
+noteForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const title = noteTitleInput.value;
+    const content = noteContentInput.value;
+
+    const userId = 'some_static_user_id';
+
+    messagediv.textContent = 'Salvando nota...';
+    messagediv.style.color = 'blue';
+
+    const sucess = await addNote(title, content, userId);
+
+    if (sucess) {
+        messagediv.textContent = 'Nota salva com sucesso';
+        messagediv.style.color = 'green';
+        noteTitleInput.value = ''; // limpando form
+        noteContentInput.value = '';
+    } else {
+        messagediv.textContent = 'Erro ao salvar';
+        messagediv.style.color = 'red';
+        noteTitleInput.value = ''; // limpando form
+        noteContentInput.value = '';
+    }
+})
