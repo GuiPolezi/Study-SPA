@@ -77,3 +77,23 @@ function editNote(index) {
 
 /* Ouvinte de eventos ao botão salvar, chama função add note */
 document.querySelector('#add-note-btn').addEventListener('click', addNote);
+
+/* Começando Firebase */
+
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc} from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDy1npBGbYMDb3nfDDtS9dMRojdOU4rrr8",
+  authDomain: "study-page-9c2c5.firebaseapp.com",
+  projectId: "study-page-9c2c5",
+  storageBucket: "study-page-9c2c5.firebasestorage.app",
+  messagingSenderId: "413274786205",
+  appId: "1:413274786205:web:a998e177d1568ed4320774"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+export { db, collection, addDoc, doc, updateDoc, deleteDoc};
