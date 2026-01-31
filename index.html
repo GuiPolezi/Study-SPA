@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draftly | Suas Notas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span>Draftly</span>
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Buscar notas...">
+        </div>
+
+        <nav class="notes-list">
+            <div class="note-item active">
+                <h4>Reunião de Planejamento</h4>
+                <p>Definir as metas para o próximo trimestre...</p>
+            </div>
+            <div class="note-item">
+                <h4>Lista de Compras</h4>
+                <p>Leite, ovos, pão de centeio e café...</p>
+            </div>
+            <div class="note-item">
+                <h4>Ideias de App</h4>
+                <p>Um rastreador de hábitos focado em gamificação...</p>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="editor-container">
+        <header class="editor-header">
+            <span class="status">Salvo na nuvem</span>
+            <button class="btn-primary">Compartilhar</button>
+        </header>
+        <div class="editor-content">
+            <h1 contenteditable="true">Reunião de Planejamento</h1>
+            <div class="editor-text" contenteditable="true">
+                Comece a escrever sua nota incrível aqui...
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
