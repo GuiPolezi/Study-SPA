@@ -1,65 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draftly | Suas Notas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
-    <aside class="sidebar">
-        <div class="logo">
-            <span style="color: wheat; font-size: 34px;">Draftly</span>
-            <button class="btn-primary">Criar Nota</button>
-        </div>
-        
+      <dialog id="myModal">
+        <h2>Title</h2>
+        <p>Content of the modal</p>
+        <button id="closeButton">Close</button>
+    </dialog>
 
-        <div class="search-container">
-            <input type="text" placeholder="Buscar notas...">
-        </div>
+    <main class="container-fluid">
+        <div class="row h-100">
+            <div class="col-3 p-0">
+                <aside class="sidebar h-100 w-100 ">
+                    <div class="logo">
+                        <span style="color: wheat; font-size: 34px;">Draftly</span>
+                        <button class="btn-primary">Criar Nota</button>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar notas...">
+                    </div>
 
-        <nav class="notes-list">
-            <div class="note-item active">
-                <h4>Reunião de Planejamento</h4>
-                <p>Definir as metas para o próximo trimestre...</p>
-            </div>
-            <div class="note-item">
-                <h4>Lista de Compras</h4>
-                <p>Leite, ovos, pão de centeio e café...</p>
-            </div>
-            <div class="note-item">
-                <h4>Ideias de App</h4>
-                <p>Um rastreador de hábitos focado em gamificação...</p>
-            </div>
-        </nav>
-    </aside>
+                    <nav class="notes-list" id="notes-list">
+                    </nav>
 
-    <section class="container-xxl">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 note-container">
+                </aside>
+            </div>
+            <div class="col-9">
+                <div class="note-container">
                     <input type="text" id="note-title" placeholder="Título">
                     <div id="note-description" contenteditable></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-end">
-                    <button class="btn-primary bg-danger" id="showModal">Excluir</button>
-                    <button class="btn-primary bg-dark">Salvar Alterações</button>
+                    <div class="buttons text-end">
+                        <button class="btn-primary bg-danger" id="showModal">Excluir</button>
+                        <button class="btn-primary bg-dark" id="add-note-btn">Salvar Alterações</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-     <dialog id="myModal">
-            <h2>Title</h2>
-            <p>Content of the modal</p>
-            <button id="closeButton">Close</button>
-        </dialog>
-        
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
