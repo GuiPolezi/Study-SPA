@@ -33,18 +33,11 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
     font-weight: 700;
     font-size: 1.2rem;
-    background-color: red;
+    height: 100px;
     margin-bottom: 1.5rem;
-}
-
-.logo-icon {
-    width: 24px;
-    height: 24px;
-    background: var(--accent);
-    border-radius: 6px;
 }
 
 /* Criar nota */
@@ -140,6 +133,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
+    height: 80vh;
 }
 
 .editor-content h1 {
